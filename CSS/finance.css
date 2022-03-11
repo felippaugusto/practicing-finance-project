@@ -1,0 +1,322 @@
+/* starts GLOBALS */
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+    --radius4rem: 0.4rem;
+    --radius6rem: 0.6rem;
+    --radius50: 50%;
+    --gap8rem: .8rem;
+    --font-size8: 0.8rem; 
+    --font-size10: 1.0rem;
+    --font-size12: 1.2rem;
+    --font-size14: 1.4rem;
+    --font-size16: 1.6rem;
+    --font-size18: 1.8rem;
+    --font-size20: 2rem;
+    --font-size25: 2.5rem;
+    --font-size30: 3rem;
+    --width20: 20rem;
+    --width30: 30rem;
+    --width40: 40rem;
+    --width90: 90%;
+    --width100: 100%;
+    --colorWhite: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', 'sans-serif';
+    transition: 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* ends GLOBALS */
+
+/* starts incomes and expenses */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(184, 178, 178);
+}
+
+.container-results {
+    width: var(--width100);
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap8rem);
+}
+
+.incomes, .expenses, .total {
+    width: var(--width30);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    font-size: var(--font-size25);
+    font-weight: 700;
+    color: var(--colorWhite);
+}
+
+.incomes {
+    background-color: green;
+    border-radius: var(--radius4rem);
+}
+
+.image-incomes {
+    background-color: rgb(2, 255, 2);
+    border-radius: var(--radius50);
+}
+
+.expenses {
+    background-color: rgb(252, 0, 0);
+}
+
+.image-expenses {
+    background-color: rgb(180, 70, 70);
+    border-radius: var(--radius50);
+}
+
+.total {
+    background-color: rgb(47, 155, 190);
+    border-radius: var(--radius4rem);
+}
+/* ends incomes and expenses */
+
+/* starts adding transection */
+.add-transection {
+    margin: 1rem;
+    font-size: var(--font-size16);
+    color: rgb(48, 151, 48);
+    cursor: pointer;
+}
+
+.add-transection:hover {
+    text-decoration: underline;
+}
+
+/* starts modal transection */
+.container-modal {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.container-modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal {
+    background-color: #F5FFFA;
+    width: var(--width40);
+    height: 35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius4rem);
+}
+
+.modal:hover {
+    box-shadow: 1px 1px 7px 3px #281797;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: var(--width100);
+}
+
+input {
+    width: var(--width90);
+    padding: 1rem;
+    border-radius: var(--radius4rem);
+    border: none;
+    background-color: #778899;
+    margin-bottom: 1rem;
+}
+
+input::placeholder {
+    color: #fff;
+    font-size: var(--font-size16);
+    font-weight: 600;
+}
+
+input:hover {
+    border: 1px solid black;
+}
+
+input:focus {
+    border: 1px solid black;
+    outline: none;
+}
+
+label {
+    font-size: var(--font-size16);
+    width: var(--width90);
+    text-align: left;
+    margin-bottom: 0.4rem;
+}
+
+.container-buttons {
+    width: var(--width100);
+    display: flex;
+    justify-content: center;
+    gap: .8rem;
+}
+
+button, .btn-cancel {
+    padding: 0.6rem;
+    width: 20%;
+    background-color: #7b6ae6;
+    border-radius: var(--radius6rem);
+    border: none;
+    color: var(--colorWhite);
+    cursor: pointer;
+    text-align: center;
+    font-size: var(--font-size14);
+}
+
+button:hover, .btn-cancel:hover {
+    padding: 0.8rem;
+    width: 22%;
+    background-color: #5743da;
+}
+/* ends modal transection */
+
+/* ends adding transection */
+
+
+/* starts table */
+table {
+    margin-top: 1rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size16);
+    border-collapse: collapse;
+}
+
+table tr {
+    border-bottom: 1px solid gray;
+    height: 3rem;
+}
+
+table tr th, table tr td{
+    width: 20vw;
+    text-align: center;
+}
+
+.btn-edit {
+    margin: 0.5rem;
+    background-color: orange;
+    border-radius: var(--radius50);
+    padding: 0.5rem;
+    height: 4rem;
+}
+
+.btn-delete {
+    margin: 0.5rem;
+    background-color: red;
+    border-radius: var(--radius50);
+    height: 4rem;
+    padding: 0.5rem;
+}
+
+.btn-delete:hover, .btn-edit:hover {
+    box-shadow: 1px 1px 5px 1px #000;
+    cursor: pointer;
+}
+/* ends table */
+
+/* starts leave the page */
+.leave-page {
+    background-color: #FF6347;
+    padding: 1.2rem 1.8rem;
+    position: absolute;
+    z-index: 9;
+    right: 3%;
+    bottom: 3%;
+    border-radius: var(--radius4rem);
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: var(--font-size16);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.leave-page:hover {
+    background-color: #e43d20;
+    padding: 1.3rem 1.9rem;
+}
+/* ends leave the page */
+
+/* starts medias */
+@media(max-width:930px){
+    .container-results {
+        width: 95vw;
+    }
+
+    .incomes, .expenses, .total {
+        font-size: var(--font-size18);
+        padding: 1rem 1rem;
+        height: 7rem;
+    }
+}
+
+@media(max-width: 550px){
+    .incomes, .expenses, .total {
+        font-size: var(--font-size14);
+    }
+
+    tr th, tr td {
+        font-size: var(--font-size12);
+    }
+
+    .btn-edit, .btn-delete {
+        height: 2.5rem;
+    }
+
+    .leave-page {
+        padding: 1rem 1rem;
+        font-size: var(--font-size14);
+    }
+    .leave-page:hover {
+        padding: 1.2rem 1.2rem;
+    }
+}
+
+@media(max-width:400px) {
+    .incomes, .expenses, .total {
+        font-size: var(--font-size10);
+    }
+
+    tr th, tr td {
+        font-size: var(--font-size10);
+    }
+
+    .btn-edit, .btn-delete {
+        height: 2rem;
+    }
+}
+/* ends medias */

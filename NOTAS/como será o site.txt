@@ -1,0 +1,19 @@
+-- página de login
+primeiro vai ter à página de login, aqui o usuário poderá digitar seu login e senha caso tenha, se não tiver no banco de dados, ele poderá se cadastrar no banco de dados
+
+-- parte do sistema financeiro
+Aqui, depois que o usuário entrar, exceto o admnistrador, ele entrará em uma página onde terá um sistema financeiro que mostrará os incomes e os expenses dele, ele poderá adicionar incomes e expenses ou excluir eles também caso queira
+
+-- parte que de logout
+Aqui, depois que o usuário quiser sair da sua conta, ele poderá clicar em sair que será redirecionado para uma pagina que excluirá as sessões e destruirá elas, após isso, ele redirecionará para o login de volta
+
+-- parte do administrador
+Aqui se eu digitar administrador e uma senha na primeira página eu posso usar o id do admnistrador, sendo o id 1 para entrar em uma página específica onde terá todos os clientes e eu poderá editar ou excluir eles
+
+  -- editar
+     Aqui ele poderá editar o registro do usuário usando o id dele para isso, e para fazer o update ele terá que enviar para a mesma página onde faz o cadastro, mas com as informações dele nos inputs e após enviar as novas informações, ele terá que enviar para outro arquivo chamado update onde ele trocará as informações antigas do usuário no banco de dados, pelas novas
+  --  deletar
+      ná página de delete caso eu clique no botão de deletar ele redirecionará para essa página onde deletará o usuário e redirecionará de novo para o index onde aparecerá a mensagem de registro deletado com sucesso
+
+  -- mensagem
+     Eu poderei usar um script do materialize para criar essa mensagem que aparecerá nos arquivos de cadastro, delete, edit e no dev finance quando o cliente adicionar algo
