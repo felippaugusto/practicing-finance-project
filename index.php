@@ -65,7 +65,7 @@ if(!empty($erros)){
 ?>
 <body>
 
-    <a href="#" class="button-cadastrar">Não se cadastrou ainda? Clique aqui!</a>
+    <a href="cadastrar.php" class="button-cadastrar">Não se cadastrou ainda? Clique aqui!</a>
     <div class="container-center">
         <div class="container-left">
             <h1 class="header"><p>Bem vindo ao seu sistema financeiro</p></h1>
