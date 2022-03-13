@@ -6,7 +6,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'roboto';
-    transition: 0.2s linear; 
+    transition: 0.1s linear; 
 }
 
 html {
@@ -17,7 +17,29 @@ body {
     background-color: #494747;
 
 }
+
+h1 {
+    color: white;
+}
 /* ends GLOBALS */
+
+/* btn cadastrar */
+.button-cadastrar {
+    color: #fff;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    z-index: 9;
+    background-color: rgb(10, 10, 236);
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+}
+
+.button-cadastrar:hover {
+    background-color: rgb(33, 33, 204);
+}
 
 /* starts container center */
 .container-center {
@@ -31,32 +53,43 @@ body {
 
 /* starts container left*/
 .container-left {
-    background: #292828;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 4rem;
-    width: 30rem;
-    height: 25rem;
-    padding: 1rem;
-    border-radius: 1rem;
-}
-
-.container-left:hover {
-    box-shadow: 2px 2px 6px 5px wheat;
-    height: 26rem;
-    width: 31rem;
+    gap: 2rem;
 }
 
 .header {
+    background: #292828;
     font-size: 2.5rem;
     text-transform: uppercase;
     color: white;
     text-align: center;
+    padding: 1.5rem 1rem;
+    width: 30rem;
+    border-radius: 0.4rem;
+}
+
+.header:hover {
+    box-shadow: 2px 2px 6px 5px wheat;
+    width: 31rem;
+}
+
+.box-astronauta {
+    background: #292828;
+    width: 30rem;
+    border-radius: 0.4rem;
+    text-align: center;
+}
+
+.box-astronauta:hover {
+    box-shadow: 2px 2px 6px 5px wheat;
+    width: 31rem;
 }
 
 .astronauta {
+    padding: 1rem; 
     width: 13rem;
 }
 
@@ -117,3 +150,114 @@ label {
 /* ends form */
 
 /* ends container center */
+
+/* starts container modal*/
+.container-modal {
+    background-color: rgba(219, 121, 118, 0.1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.container-modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal {
+    background-color: rgb(221, 215, 215);
+    border: 3px solid black; 
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0.4rem;
+    gap: 4rem;
+    padding: 1rem;
+}
+
+.container-modal .modal .paragraph-modal {
+    text-align: center;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.container-modal .modal button {
+    padding: 0.6rem 1rem;
+    width: 15rem;
+    border: none;
+    border: 1px solid #836FFF;
+    border-radius: 0.4rem;
+    background-color: #483D8B;
+    color: #fff;
+    cursor: pointer;
+}
+
+.container-modal .modal button:hover {
+    padding: 0.7rem 1rem;
+    width: 16rem;
+    background-color: #836FFF;
+    border: 1px solid black;
+}
+
+/* ends container modal*/
+
+/* starts medias */
+@media(max-width:700px){
+    /* container center */
+    .container-center {
+        flex-direction: column;
+    }
+
+    /* container left*/
+    .container-left {
+        flex-direction: row;
+        width: 95%;
+        height: 20%;
+    }
+
+    .header {
+        width: 80%;
+        font-size: 1.8rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header:hover {
+        width: 80%;
+        padding: 4.4rem 1rem; 
+    }
+
+    .box-astronauta, .box-astronauta:hover {
+        width: auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .astronauta {
+        width: 10rem;
+    }
+
+    /* container right */
+    .form {
+        width: 95%;
+    }
+
+    .form:hover {
+        width: 95%;
+    }
+}
+/* ends medias */

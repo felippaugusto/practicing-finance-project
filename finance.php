@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['logado'])){
+    header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -65,7 +72,7 @@
             </tr>
         </tbody>
     </table>
-    <a href="index.html" class="leave-page">Logout</a>
+    <a href="logout.php" class="leave-page">Logout</a>
     <script src="JS/script.js"></script>
 </body>
 </html>
