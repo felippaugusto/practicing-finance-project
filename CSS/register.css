@@ -1,0 +1,42 @@
+/* backing index */
+.back-to-page-index {
+    background-color: rgb(255, 165, 0);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    position: absolute;
+    z-index: 9;
+    bottom: 2%;
+    right: 3%;
+    text-align: center;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.back-to-page-index:hover {
+    background-color: rgb(192, 126, 3);
+}
+
+.form.register {
+    display: flex;
+    flex-direction: column;
+    background: #292828;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+    width: 40rem;
+}
+
+@media(max-width:700px){
+    /* container right */
+    .form.register {
+        width: 95%;
+    }
+
+    .form.register:hover {
+        width: 95%;
+    }
+}
+/* ends medias */
+

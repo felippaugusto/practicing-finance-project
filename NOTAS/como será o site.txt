@@ -16,4 +16,4 @@ Aqui se eu digitar administrador e uma senha na primeira página eu posso usar o 
       ná página de delete caso eu clique no botão de deletar ele redirecionará para essa página onde deletará o usuário e redirecionará de novo para o index onde aparecerá a mensagem de registro deletado com sucesso
 
   -- mensagem
-     Eu poderei usar um script do materialize para criar essa mensagem que aparecerá nos arquivos de cadastro, delete, edit e no dev finance quando o cliente adicionar algo
+    eu mesmo fazerei as mensagens

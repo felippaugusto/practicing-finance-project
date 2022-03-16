@@ -1,3 +1,4 @@
+// container modal close with erros 
 const btnOkay = document.querySelector(".btn-okay")
 
 btnOkay.addEventListener("click", function() {

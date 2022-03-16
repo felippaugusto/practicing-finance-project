@@ -1,6 +1,6 @@
 <?php
 include_once 'php-action/db_connect.php';
-include_once 'includes/includes-index/header.php';
+include_once 'includes/includes-index-and-register/header.php';
 
 session_start();
 
@@ -65,7 +65,7 @@ if(!empty($erros)){
 ?>
 <body>
 
-    <a href="cadastrar.php" class="button-cadastrar">Não se cadastrou ainda? Clique aqui!</a>
+    <a href="register.php" class="button-cadastrar">Não se cadastrou ainda? Clique aqui!</a>
     <div class="container-center">
         <div class="container-left">
             <h1 class="header"><p>Bem vindo ao seu sistema financeiro</p></h1>
@@ -82,14 +82,9 @@ if(!empty($erros)){
         </form>
     </div>
 <?php
-if(!empty($erros)){
-    foreach($erros as $erro){
-        echo "";
-    }
-}
 ?>
 
 <?php
-include_once 'includes/includes-index/footer.php'
+include_once 'includes/includes-index-and-register/footer.php'
 ?>
 

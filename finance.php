@@ -1,20 +1,12 @@
 <?php
+include_once 'includes/includes-finance/header.php';
 session_start();
 
 if(!isset($_SESSION['logado'])){
     header('Location: index.php');
 }
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Systen</title>
-    <link rel="stylesheet" href="CSS/finance.css">
-</head>
-<body>
+
     <header>
         <h1>Financial Systen</h1>
         <div class="container-results">
@@ -64,15 +56,9 @@ if(!isset($_SESSION['logado'])){
             </tr>
         </thead>
         <tbody id="tbody">
-            <tr>
-                <td>Gasolina</td>
-                <td>12/04/2022</td>
-                <td>R$ 150.54</td>
-                <td class="buttons-edit-delete"><img src="images/btn-editar.svg" alt="button-editar" class="btn-edit"> <img src="images/btn-excluir.svg" alt="button-excluir" class="btn-delete"></td>
-            </tr>
         </tbody>
     </table>
     <a href="logout.php" class="leave-page">Logout</a>
-    <script src="JS/script.js"></script>
-</body>
-</html>
+<?php
+include_once 'includes/includes-finance/footer.php';
+?>
