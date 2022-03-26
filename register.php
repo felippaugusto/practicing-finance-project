@@ -2,16 +2,35 @@
 include_once 'includes/includes-index-and-register/header.php';
 include_once 'php-action/db_connect.php';
 
+function cleanInputs($input) {
+    global $connect;
+    // escape caracters specials
+    $escapeString = mysqli_escape_string($connect, $input);
+    // XSS
+    $escapeScripts = htmlspecialchars($escapeString);
+    
+    return $escapeScripts;
+
+}
+
 if(isset($_POST['register-btn'])){
     $erros = array();
 
-    $name = mysqli_real_escape_string($connect, $_POST['name']);
-    $email = mysqli_real_escape_string($connect, $_POST['email']);
-    $login = mysqli_real_escape_string($connect, $_POST['login']);
-    $password = mysqli_real_escape_string($connect, $_POST['password']);
+    // verification inputs
+
+    $name = cleanInputs($_POST['name']);
+    $email = cleanInputs(($_POST['email']));
+    $login = cleanInputs($_POST['login']);
+    $password = cleanInputs($_POST['password']);
+
+    $removedCharsSpecialsEmail = "/^[a-z0-9.\-\_]+@[a-z0-9.\-\_]+\.(com|br|com.br)$/i";
+    $removedCharsSpecialsName = "/^[a-zA-ZÀ-Úà-ú ]+$/i";
 
     if(empty($name) || empty($login) || empty($password)){
         $erros[] = "Preencha todos os campos importantes!";
+    }
+    else if(!preg_match($removedCharsSpecialsEmail, $email) || !preg_match($removedCharsSpecialsName, $name)){
+        $erros[] = "Não são aceitos caracteres especiais em nomes/emails!";
     }
     else {
         $password = md5($password);
