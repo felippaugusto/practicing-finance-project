@@ -1,7 +1,10 @@
 <?php
-include_once 'includes/includes-index-and-register/header.php';
+// header
+include_once 'includes/includes-default/header.php';
+// db connection
 include_once 'php-action/db_connect.php';
 
+// checking inputs
 function cleanInputs($input) {
     global $connect;
     // escape caracters specials
@@ -16,13 +19,13 @@ function cleanInputs($input) {
 if(isset($_POST['register-btn'])){
     $erros = array();
 
-    // verification inputs
-
+    // values inputs
     $name = cleanInputs($_POST['name']);
     $email = cleanInputs(($_POST['email']));
     $login = cleanInputs($_POST['login']);
     $password = cleanInputs($_POST['password']);
 
+    // regular expressions
     $removedCharsSpecialsEmail = "/^[a-z0-9.\-\_]+@[a-z0-9.\-\_]+\.(com|br|com.br)$/i";
     $removedCharsSpecialsName = "/^[a-zA-ZÀ-Úà-ú ]+$/i";
 
@@ -33,7 +36,9 @@ if(isset($_POST['register-btn'])){
         $erros[] = "Não são aceitos caracteres especiais em nomes/emails!";
     }
     else {
+        // encrypting password
         $password = md5($password);
+        // registered user
         $sql = "INSERT INTO usuarios (nome, email, login, password) VALUES ('$name', '$email', '$login', '$password')";
 
         if(mysqli_query($connect, $sql)){
@@ -46,6 +51,7 @@ if(isset($_POST['register-btn'])){
 
 }
 
+// errors
 if(!empty($erros)){
     foreach($erros as $erro){
         echo '<div class="container-modal active">
@@ -82,5 +88,6 @@ if(!empty($erros)){
         </form>
     </div>
 <?php
-include_once 'includes/includes-index-and-register/footer.php';
+// footer
+include_once 'includes/includes-default/footer.php';
 ?>

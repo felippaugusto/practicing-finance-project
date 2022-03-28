@@ -1,7 +1,8 @@
 <?php
+// header
 include_once 'includes/includes-finance/header.php';
 session_start();
-
+// segurança
 if(!isset($_SESSION['logado'])){
     header('Location: index.php');
 }

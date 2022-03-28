@@ -1,6 +1,8 @@
 <?php
+// db conection
 include_once 'php-action/db_connect.php';
-include_once 'includes/includes-index-and-register/header.php';
+// header
+include_once 'includes/includes-default/header.php';
 
 session_start();
 
@@ -13,10 +15,26 @@ if(isset($_POST['submit-btn'])){
     $login = mysqli_escape_string($connect, $_POST['login']);
     $password = mysqli_escape_string($connect, $_POST['password']);
 
+    
+
     // verificando se estão vazios
     if(empty($login) || empty($password)){
         $erros[] = "Por favor preencher todos os campos !";
         // aqui para mostrar, usar um script que mostre em uma caixa flutuante a mensagem
+    }
+    else if($login == 'admin' && $password == 'admin') {
+        $sql = "SELECT login FROM usuarios WHERE login = 'admin' AND password = '21232f297a57a5a743894a0e4a801fc3'";
+        $resultado = mysqli_query($connect, $sql);
+
+        if(mysqli_num_rows($resultado) > 0){
+            $dados = mysqli_fetch_array($resultado);
+            $_SESSION['logado'] = true;
+
+            header('Location: admin.php');
+        }
+        else {
+            $erros[] = "Login e senha incorretos!";
+        }
     }
     else {
         $sql = "SELECT login FROM usuarios WHERE login = '$login'";
@@ -51,7 +69,7 @@ if(isset($_POST['submit-btn'])){
         }
     }
 }
-
+// erros
 if(!empty($erros)){
     foreach($erros as $erro){
         echo '<div class="container-modal active">
@@ -85,6 +103,7 @@ if(!empty($erros)){
 ?>
 
 <?php
-include_once 'includes/includes-index-and-register/footer.php'
+// footer
+include_once 'includes/includes-default/footer.php'
 ?>
 
