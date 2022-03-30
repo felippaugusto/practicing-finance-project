@@ -6,6 +6,7 @@ session_start();
 if(!isset($_SESSION['logado'])){
     header('Location: index.php');
 }
+
 ?>
 
     <header>
@@ -59,7 +60,7 @@ if(!isset($_SESSION['logado'])){
         <tbody id="tbody">
         </tbody>
     </table>
-    <a href="edit.php" class="edit-account">Editar sua conta</a>
+    <a href="edit.php?id=<?php echo $_SESSION['id_usuario']; ?>" class="edit-account">Editar sua conta</a>
     <a href="logout.php" class="leave-page">Logout</a>
 <?php
 include_once 'includes/includes-finance/footer.php';

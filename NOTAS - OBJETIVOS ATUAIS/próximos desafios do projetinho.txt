@@ -1,3 +1,5 @@
 -- relacionamento de tabelas
-as pr�ximas coisas que irei fazer � relacionar tabelas de receitas, despesas e total do sistema financeiro com o cliente para quando ele entrar ficar salvo seus dados dentro dos incomes, expenses e total
+às proximas coisas que irei fazer é relacionar tabelas de receitas, despesas e total do sistema financeiro com o cliente para quando ele entrar ficar salvo seus dados dentro dos incomes, expenses e total
+
+também irei mudar a criptografia da senha de md5 para hash depois e tentar refatorar meu código para deixar mais organizado
 
