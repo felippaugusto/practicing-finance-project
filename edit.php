@@ -4,11 +4,11 @@ include_once 'includes/includes-default/header.php';
 include_once 'includes/message.php';
 ?>
 
-<a href="index.php" class="back-to-page-index">Voltar</a>
+<a href="finance.php" class="back-to-page-index"><?php $_SESSION['logado'] = true ?>Voltar</a>
 
 <div class="container-center">
         <div class="container-left">
-            <h1 class="header"><p>Por favor, seja um de nossos clientes</p></h1>
+            <h1 class="header"><p>EDITANDO SUA CONTA</p></h1>
             <div class="box-astronauta">
                 <img src="images/astrounata.png" alt="astronauta" class="astronauta">
             </div>
@@ -23,7 +23,7 @@ include_once 'includes/message.php';
             <input type="text" name="login" id="login" title="Digite seu login de entrada">
             <label for="password">password</label>
             <input type="password" name="password" id="password">
-            <button type="submit" class="submit-btn register" name="register-btn">Cadastrar</button>
+            <button type="submit" class="submit-btn register" name="register-btn">Editando</button>
         </form>
     </div>
 <?php

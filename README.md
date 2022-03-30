@@ -3,6 +3,4 @@ Este projeto tem por meu objetivo de praticar e aprender mais as linguagens que 
 
 Ainda estou construindo este projeto, logo logo, terminarei ele com sucesso :)
 
-adicionei php construindo a parte de entrar na conta do usuario e deslogar, mais tarde vou desenvolver a parte de cadastrar no banco de dados, e colocar os dados do cliente logado nos incomes, expenses e total
-
-lembrando que esse meu sistema está sendo rodado em local host usando o laragon para esse serviço e meu banco de dados portanto é local host do próprio laragon
+lembrando que esse meu sistema está sendo rodado em local host usando o laragon para esse serviço e meu banco de dados portanto é local host do próprio laragon com o phpmyadmin

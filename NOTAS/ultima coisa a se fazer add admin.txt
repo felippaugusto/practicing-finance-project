@@ -1,1 +1,0 @@
-depois de terminar o sistema a ultima coisa a fazer é para o cliente admin com a senha admin que quando ele entrar ele vai ser redirecionado não para o finance mas sim para outra página com os clientes cadastrados

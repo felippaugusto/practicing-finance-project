@@ -4,7 +4,7 @@ include_once 'includes/includes-admin/header.php';
 
 session_start();
 
-if(!isset($_SESSION['logado'])){
+if(!isset($_SESSION['logadoAdmin'])){
     header('Location: index.php');
 }
 ?>
@@ -18,6 +18,7 @@ if(!isset($_SESSION['logado'])){
         <th>EMAIL</th>
         <th>LOGIN</th>
         <th>ID</th>
+        <th></th>
     </thead>
     <tbody>
         <?php
@@ -33,6 +34,7 @@ if(!isset($_SESSION['logado'])){
         <td><?php echo $dados['email']; ?></td>
         <td><?php echo $dados['login']; ?></td>
         <td><?php echo $dados['id']; ?></td>
+        <td><a href="php-action/delete.php?id=<?php echo $dados['id']; ?>" class="btn-delete">DELETE</a></td>
     </tr>
 
     <?php 
@@ -40,6 +42,7 @@ if(!isset($_SESSION['logado'])){
     else:
     ?>
     <tr>
+        <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>

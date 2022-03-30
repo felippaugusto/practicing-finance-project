@@ -1,7 +1,3 @@
 -- relacionamento de tabelas
 as próximas coisas que irei fazer é relacionar tabelas de receitas, despesas e total do sistema financeiro com o cliente para quando ele entrar ficar salvo seus dados dentro dos incomes, expenses e total
 
--- validações e sanitização
-
-caso os inputs venham com caracteres indesejados para o banco de dados, limpar e validar esses dados
-

@@ -59,6 +59,7 @@ if(!isset($_SESSION['logado'])){
         <tbody id="tbody">
         </tbody>
     </table>
+    <a href="edit.php" class="edit-account">Editar sua conta</a>
     <a href="logout.php" class="leave-page">Logout</a>
 <?php
 include_once 'includes/includes-finance/footer.php';
