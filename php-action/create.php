@@ -32,8 +32,16 @@ if(isset($_POST['register-btn'])){
         $_SESSION['message'] = "Preencha os campos importantes!";
         header('Location: ../register.php');
     }
-    else if(!preg_match($removedCharsSpecialsEmail, $email) || !preg_match($removedCharsSpecialsName, $name)){
-        $_SESSION['message'] = "Nome ou EMAIL incorreto!";
+    else if(!preg_match($removedCharsSpecialsName, $name) && !preg_match($removedCharsSpecialsEmail, $email)){
+        $_SESSION['message'] = "Nome incorreto e EMAIL incorreto!";
+        header('Location: ../register.php');
+    }
+    else if(!preg_match($removedCharsSpecialsEmail, $email)){
+        $_SESSION['message'] = "EMAIL incorreto!";
+        header('Location: ../register.php');
+    }
+    else if(!preg_match($removedCharsSpecialsName, $name)){
+        $_SESSION['message'] = "Nome incorreto!";
         header('Location: ../register.php');
     }
     else {
